@@ -12,7 +12,7 @@ export class TodoController implements TodoServiceController{
  
 
   @GrpcMethod('TodoService', 'PostTodo')
-  postTodo(postTodoDTO: PostTodoDTO): Todo{
+  async postTodo(postTodoDTO: PostTodoDTO): Promise<Todo>{
     return this.todoService.postTodo(postTodoDTO)
   }
 
